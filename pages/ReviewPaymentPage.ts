@@ -93,6 +93,32 @@ export class ReviewPaymentPage extends BasePage {
   public readonly termsAgreementTextPop: Locator 
     = this.page.locator("//h1[@id='mat-mdc-dialog-title-0']");
 
+     public async enterCardNumber(cardNumber: string = process.env.CARD_NUMBER as string) {
+    await this.cardNumberInput.fill(cardNumber);
+  }
 
+  public async enterExpiryDate(expiryDate: string = process.env.CARD_EXPIRATION_DATE as string) {
+    await this.expiryDateInput.fill(expiryDate);
+  }
 
+  public async enterCVC(cvc: string = process.env.CARD_SECURITY_CODE as string) {
+    await this.cvcInput.fill(cvc);
+  }
+
+  public async enterZipCode(zipCode: string = process.env.ZIP_CODE as string) {
+    await this.zipCodeInput.fill(zipCode);
+  }
+
+  public async clickTermsAndConditionsCheckbox() {
+    await this.termsAndConditionsCheckbox.click();
+  }
+
+  public async clickBackButton() {
+    await this.backButton.click();
+  }
+
+  public async clickPayButton() {
+    await this.payButton.click();
+  }
+  
 }
