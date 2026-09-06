@@ -8,7 +8,7 @@ import path from "path";
  * Configuration constants
  */
 const BROWSER_TYPE: string = "chrome";
-const HEADLESS_MODE: boolean = false;
+const HEADLESS_MODE: boolean = true;
 const MAXIMIZED_WINDOW: boolean = true;
 const SLOW_MOTION_DELAY: number = 0; // slow mode in milliseconds
 const DEFAULT_TIMEOUT: number = 30000; // default timeout in milliseconds

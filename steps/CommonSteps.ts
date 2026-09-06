@@ -8,7 +8,6 @@ import {
   page,
 } from "../globalPagesSetup";
 
-
 Given('user is on the enrollment page', async function () {
     await startApplicationPage.login();
 });
