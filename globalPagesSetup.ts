@@ -32,6 +32,4 @@ export const initElements = (argPage: Page): void => {
     startApplicationPage = new StartApplicationPage(page);
     reviewPaymentPage = new ReviewPaymentPage(page);
     // INITIALIZE OTHER PAGE INSTANCES HERE...
-
-    
 }
