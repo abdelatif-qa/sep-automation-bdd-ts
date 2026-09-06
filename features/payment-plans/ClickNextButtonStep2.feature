@@ -11,34 +11,27 @@ Feature: Click on the next button on payment plans page   #! Test Only
     #* AC6: The back button should be displayed.
     #* AC7: By default, the pay button should be displayed.
 
+    #TODO: Create scenarios that cover all the acceptance criteria
 
     Background:
         Given user is on the enrollment page
-        And user has completed step one with valid information
-        And user is on step two of the enrollment process
+        And user has completed start application step
 
-
-    #TODO: Create scenarios that cover all the acceptance criteria
-
-   Scenario: verify that the next button is disabled by default
-        Given user is on the enrollment page
-        And user has completed step one with valid information
-        And user is on step two of the enrollment process
+    @sep16-1
+    Scenario Outline: Clicking on any payment plan activates the next button
         Then the next button is disabled by default
+        When user clicks "<payment_plan>" payment plan
+        Then the next button is enabled
 
+        Examples:
+            | payment_plan |
+            | upfront      |
+            | installments |
 
-    Scenario: verify that the next button will be activated when user selects upfront payment option
-        Given user is on the enrollment page
-        And user has completed step one with valid information
-        And user is on step two of the enrollment process
-        When user clicks upfront payment option
-        Then the next button will be enabled
-
-    Scenario: verify that the next button will be activated when user selects installments payment option
-        Given user is on the enrollment page
-        And user has completed step one with valid information
-        And user is on step two of the enrollment process
-        When user clicks installments  payment option
-        Then the next button will be enabled
-
-
+    @sep16-2
+    Scenario: clicking on next button navigates to step 3 page
+        When user clicks "upfront" payment plan
+        And user clicks on the next button of payment plan page
+        Then the review step stepper circle is blue
+        And the payment plan stepper circle is green
+        And the start application stepper circle is green

@@ -131,7 +131,23 @@ export class PaymentPlanPage extends BasePage {
 
   public readonly UpfrontText: Locator 
     = this.page.locator("//span[@class='payment-type']");
+    
+  async selectPaymentPlan(paymentPlan: string) {
+    paymentPlan = paymentPlan.toLowerCase();
+    switch (true) {
+      case paymentPlan.includes("upfront"):
+        await this.upfrontPaymentOption.click();
+        break;
+      case paymentPlan.includes("installments"):
+        await this.installmentsPaymentOption.click();
+        break;
+      default:
+        throw new Error(`Invalid payment plan: ${paymentPlan}`);
+    }
+  }
 
- 
+  async clickNextButton() {
+    await this.activeNextButton.click();
+  }
 
 }
