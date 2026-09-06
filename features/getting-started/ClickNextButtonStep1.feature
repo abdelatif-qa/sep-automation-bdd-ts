@@ -7,5 +7,4 @@ Feature: Click on the next button on step 1
     #*              a. Test by providing all fields
     #*              b. Test by providing only the required fields
     
-
     #TODO: Create scenarios that cover all the acceptance criteria

@@ -105,9 +105,48 @@ export class StartApplicationPage extends BasePage {
   public readonly originalPrice: Locator 
     = this.page.locator("//s[contains(.,'$')]");
 
-  
+    async enterFirstName(firstName: string) {
+    await this.firstNameInputBox.fill(firstName);
+  }
 
+  async enterLastName(lastName: string) {
+    await this.lastNameInputBox.fill(lastName);
+  }
+
+  async enterEmail(email: string) {
+    await this.emailInputBox.fill(email);
+  }
+
+  async enterPhoneNumber(phoneNumber: string) {
+    await this.phoneNumberInputBox.fill(phoneNumber);
+  }
+
+  async selectHowDidYouHearAboutUs(howDidYouHear: string) {
+    howDidYouHear = howDidYouHear.toLowerCase();
+    await this.howDidYouHearAboutUsDropDown.click();
+    switch (howDidYouHear) {
+      case "email":
+        await this.emailOptionFromDropDown.click();
+        break;
+      case "facebook":
+        await this.facebookOptionFromDropDown.click();
+        break;
+      case "google":
+        await this.googleOption.click();
+        break;
+      case "instagram":
+        await this.instagramOptionFromDropDown.click();
+        break;
+      case "linkedin":
+        await this.linkedInOptionFromDropDown.click();
+        break;
+      case "twitter":
+        await this.twitterOptionFromDropDown.click();
+        break;
+    }
+  }
+
+  async clickNextButton() {
+    await this.nextButton.click();
+  }
 }
-
-
-
