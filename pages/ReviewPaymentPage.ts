@@ -1,5 +1,6 @@
 import { BasePage } from "./BasePage";
 import { Locator, FrameLocator } from 'playwright';
+import { expect } from '@playwright/test';
 
 export class ReviewPaymentPage extends BasePage {
 
@@ -119,6 +120,10 @@ export class ReviewPaymentPage extends BasePage {
 
   public async clickPayButton() {
     await this.payButton.click();
+  }
+
+  public async waitForProgressBarToDisappear() {
+    await expect(this.progressBar).toBeHidden();
   }
   
 }

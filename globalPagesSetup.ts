@@ -3,6 +3,7 @@ import { LeftMainPage } from "./pages/LeftMainPage";
 import { PaymentPlanPage } from "./pages/PaymentPlanPage";
 import { StartApplicationPage } from "./pages/StartApplicationPage";
 import { ReviewPaymentPage } from "./pages/ReviewPaymentPage";
+import { ConfirmationPage } from "./pages/ConfirmationPage";
 // Import OTHER PAGES CLASSES HERE...
 
 
@@ -14,6 +15,7 @@ export let leftMainPage: LeftMainPage;
 export let paymentPlanPage: PaymentPlanPage;
 export let startApplicationPage: StartApplicationPage;
 export let reviewPaymentPage: ReviewPaymentPage;
+export let confirmationPage: ConfirmationPage;
 export let page: Page;
 // ADD OTHER PAGE CLASS REFERENCES HERE...
 
