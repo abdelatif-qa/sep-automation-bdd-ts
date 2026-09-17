@@ -14,6 +14,5 @@ export class LeftMainPage extends BasePage {
 
   public readonly programName: Locator 
     = this.page.locator("//p[@class='course-name']/a");
-    
 
 }
